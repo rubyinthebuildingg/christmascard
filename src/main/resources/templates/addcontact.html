@@ -1,25 +1,29 @@
 <!doctype html>
 <html xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <title>Add Contact</title>
-  </head>
-  <body>
-    <h1>Add Contact</h1>
+<head>
+  <title>Add Contact</title>
+</head>
+<body>
 
-    <form action="/save" method="post">
-      <label>First Name:</label>
-      <input type="text" name="firstName" /><br /><br />
+<h1>Add Contact</h1>
 
-      <label>Last Name:</label>
-      <input type="text" name="lastName" /><br /><br />
+<form th:action="@{/save}" th:object="${contact}" method="post">
+  
+  <label>First Name:</label>
+  <input type="text" th:field="*{firstName}" /><br><br>
 
-      <label>City:</label>
-      <input type="text" name="city" /><br /><br />
+  <label>Last Name:</label>
+  <input type="text" th:field="*{lastName}" /><br><br>
 
-      <label>Card Sent:</label>
-      <input type="checkbox" name="cardSent" /><br /><br />
+  <label>City:</label>
+  <input type="text" th:field="*{city}" /><br><br>
 
-      <button type="submit">Save</button>
-    </form>
-  </body>
+  <label>Card Sent:</label>
+  <input type="checkbox" th:field="*{cardSent}" /><br><br>
+
+  <button type="submit">Save</button>
+
+</form>
+
+</body>
 </html>

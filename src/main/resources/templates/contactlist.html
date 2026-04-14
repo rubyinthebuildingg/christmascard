@@ -2,17 +2,21 @@
 <html xmlns:th="http://www.thymeleaf.org">
   <head>
     <title>Christmas Card Contacts</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
   </head>
-  <a href="/logout">Logout</a>
-  <br /><br />
   <body>
+    <a th:href="@{/logout}">Logout</a>
+    <br /><br />
+
     <h1>Christmas Card Contacts</h1>
 
-    <a href="/add">Add New Contact</a>
-    <form action="/search" method="get">
+    <a th:href="@{/add}">Add New Contact</a>
+
+    <form th:action="@{/search}" method="get">
       <input type="text" name="keyword" placeholder="Search by last name" />
       <button type="submit">Search</button>
     </form>
+
     <table border="1">
       <tr>
         <th>First Name</th>
